@@ -1,0 +1,364 @@
+header{
+    animation: affichage-header 0.4s linear 0s 1 normal;
+    background-color: rgba(217, 159, 89,0.5);
+    border-radius: 25px;
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+
+header:hover,header:focus-within{
+    animation: header 0.9s linear 0s 1 normal;
+    background-color: rgba(217, 159, 89,0.8);
+}
+
+header div:first-child{
+    font-size: calc(3.1vh + 0.99vw + 0.3em);
+    color: rgba(191, 129, 54,0.6);
+    text-align: start;
+}
+/* Vérifier les doublons entre link et la base */
+header div{
+    filter: none;
+    font-size: calc( 2.25vh + 0.7vw + 0.3em);
+    color: rgba(191, 129, 54,0.7);
+    background-color: rgba(89, 34, 14,0.8);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+header div a:link,header div a:visited{
+    text-decoration: none;
+    color: inherit;
+}
+
+header div:focus-within, header div:hover,#première-version header div:first-child + :not(div){
+    animation: header-div-a 0.4s linear 0s 1 normal;
+    animation: header-div 0.9s linear 0s infinite alternate;
+}
+
+@keyframes header{
+    0% {background-color: rgba(217, 159, 89,0.5)}
+    100% {background-color: rgba(217, 159, 89,0.8)}
+  }
+  
+@keyframes header-div{
+    0%{background-color: rgba(89, 34, 14,0.8);border-radius: 10px;color:rgba(191, 129, 54,1);}
+    100%{background-color: rgba(89, 34, 14,0.6);border-radius: 5px;color: rgba(191, 129, 54,0.7);}
+}
+
+@keyframes header-div-a{
+    0%{color: rgba(191, 129, 54,0.7)}
+    100%{color: rgba(191, 129, 54,1)}
+}
+
+@keyframes affichage-header {
+    0%{background-color: rgba(217, 159, 89,0.8)}
+    100%{background-color: rgba(217, 159, 89,0.5)}
+}
+
+@keyframes PageActive { /* Animation utilisé pour toute les pages différent de Index */
+    0%{margin-top: 10vh;color:rgba(89, 34, 14,0)}
+    55%{color: rgba(89, 34, 14,0)}
+    100%{margin-top: 0%;color: rgba(89, 34, 14,0.8)}
+}
+/*################ début Page index ################ */
+#index{
+    background-image: url("font.JPG");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgb(180, 125, 50);
+}
+
+#index main div {
+    margin-left: 17vw;
+    margin-top: 15%;
+    width: 30%;
+    height: 45%;
+    font-size: 1.3em;
+    background-color: rgba(217, 159, 89,0.6);
+    border-radius: 10px;
+    color: rgba(89, 34, 14,0.95);
+    text-align: justify;
+}
+
+#index main div p{
+    padding: 6px;
+}
+
+#index main div h1{
+    background-color: rgba(217, 159, 89,0.6);
+    border-radius: 10px;
+    font-size: 2em;
+    color: rgb(89, 34, 14);
+}
+/*################ Fin page Index ################ */
+
+/*################ Début page première version ################*/
+#première-version,#grille,#version-final {
+    background-image: url("font2.JPG");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#première-version header div a[href="./Première-version.html"]{
+    color: inherit;
+}
+
+#première-version header div:nth-child(2){
+    align-self: flex-start;
+    background-color: rgba(191, 129, 54,0.95);
+    height: calc(100% + 10px);
+    border-radius:35px 35px 0px 0px ;
+    color: rgba(89, 34, 14,0.8);
+    animation: PageActive .5s linear 0s 1 normal;
+}
+
+#première-version main div, #grille main div{
+    margin-top: 10px;
+    background-color: rgba(191, 129, 54,0.95);
+    height: calc(100vh - (10vh + 26px));
+    display: flex;
+    width: 100vw;
+    margin-left: -8px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+#première-version embed, #grille embed{
+    width: 97%;
+    height: 98%;
+    border-radius: 10px;
+}
+
+/* ################ Fin page première-version ################ */
+
+/* ################ Début page Grille de synthèse ################ */
+
+#grille header div:nth-child(3){
+    align-self: flex-start;
+    background-color: rgba(191, 129, 54,0.95);
+    height: calc(100% + 10px);
+    border-radius:35px 35px 0px 0px ;
+    color: rgba(89, 34, 14,0.8);
+    animation: PageActive .5s linear 0s 1 normal;
+}
+
+/* ################ Fin page Grille de synthèse ################ */
+
+/* ################ Début page Version Final ################ */
+
+#version-final header div:last-child{
+    align-self: flex-start;
+    background-color: rgba(191, 129, 54,0.75);
+    height: calc(100% + 10px);
+    border-radius:35px 35px 0px 0px ;
+    color: rgba(89, 34, 14,0.8);
+    animation: PageActive .5s linear 0s 1 normal;
+}
+
+@-webkit-keyframes AutoSlide-3 {
+    0%, 15%, 100% {
+        left: 0px; /* première image et dernière*/
+	}
+	35%, 50% {
+		left: -250px; /*2ème image*/
+	}
+	70%, 85% {
+        left: -500px; /*3ème image*/
+	}
+}
+
+@-moz-keyframes AutoSlide-3 {
+    0%, 15%, 100% {
+		left: 0px; /* première image et dernière*/
+	}
+	35%, 50% {
+		left: -250px; /*2ème image*/
+	}
+	70%, 85% {
+		left: -500px; /*3ème image*/
+	}
+}
+
+@keyframes AutoSlide-3 {
+    0%, 15%, 100% {
+        left: 0px; /* première image et dernière*/
+	}
+	35%, 50% {
+        left: -250px; /*2ème image*/
+	}
+	70%, 85% {
+        left: -500px; /*3ème image*/
+	}
+}
+@-webkit-keyframes AutoSlide-4 {
+    0%, 11%, 100% {
+        left: 0px; /* première image et dernière*/
+	}
+	26%, 37% {
+		left: -250px; /*2ème image*/
+	}
+	52%, 63% {
+        left: -500px; /*3ème image*/
+    }
+    
+    78%, 89%{
+        left: -750px; /*éme image*/
+    }
+}
+
+@-moz-keyframes AutoSlide-4 {
+    0%, 11%, 100% {
+		left: 0px; /* première image et dernière*/
+	}
+	26%, 37% {
+		left: -250px; /*2ème image*/
+	}
+	52%, 63% {
+		left: -500px; /*3ème image*/
+    }
+    
+    78%, 89%{
+        left: -750px; /*éme image*/
+    }
+}
+
+@keyframes AutoSlide-4 {
+    0%, 11%, 100% {
+        left: 0px; /* première image et dernière*/
+	}
+	26%, 37% {
+        left: -250px; /*2ème image*/
+	}
+	52%, 63% {
+        left: -500px; /*3ème image*/
+    }
+    
+    78%, 89%{
+        left: -750px; /*éme image*/
+    }
+}
+
+#version-final ul{
+    left: 0;
+    position: absolute;   /*on sort l'élément du flux*/
+    top: 0;               /*on le positionne précisément dans ...*/
+    left: 0;              /*l'angle haut gauche de son parent positionné*/
+    display: flex;
+    margin: 0;            
+    padding: 0;
+}
+
+#version-final li{
+    display: inline;
+    margin: 0;
+}
+
+#version-final main article h1{
+    background-color: rgba(166, 102, 46, 0.85);
+    font-family: 'Courier New', Courier, monospace;
+    color: rgba(217, 159, 89, 0.767);
+    font-size: 1.7em;
+    text-indent: 5vw;
+    border-radius: 5px 5px 0 0;
+    margin-bottom: 10px;
+    margin: 0;
+}
+
+#version-final main div{
+    background-color: rgba(166, 102, 46, 0.85);
+    float: left;
+    border-radius: 0 0 8px 8px;
+	position: relative;    
+	width: 250px;          
+	height: 167px;         
+	overflow: hidden; 
+}
+
+#version-final main article img{
+    image-resolution: 750px;
+    min-width: 250px;
+    border-radius: 8px;
+    width: 50px;
+    height: auto;
+    margin: 0;
+
+}
+
+#version-final section{
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(191, 129, 54,0.75);
+    border-radius: 10px;
+}
+
+#version-final article{
+    background-color: rgba(115, 59, 26, 0.75);
+    padding: 5px;
+    border-radius: 9px;
+    margin: 5px;
+}
+
+#version-final article p{
+    width: 40vw;
+    text-align: start;
+    margin-left: calc(250px + 2vw);
+    margin-right: 2vw;
+	font-size: calc(0.5vh + 0.6vw + 0.7em);
+    background-color: rgba(191, 129, 54, 0.733);
+    border-radius: 8px;
+    color: rgba(0, 0, 0,0.56);
+}
+
+#version-final article div ul:not([class]){
+    animation: AutoSlide-3 9s linear 0s infinite normal;
+}
+
+.quatresimages{
+    animation: AutoSlide-4 12s linear 0s infinite normal;
+}
+
+#version-final main article:last-child{
+    display: inherit;
+    flex-wrap: inherit;
+    flex-direction: inherit;
+    justify-content: inherit;
+    align-items: inherit;
+}
+
+#version-final main article:last-child img{
+    width: 50vw;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+#version-final article p span{
+    font-size: calc(0.5vh + 0.6vw + 0.7125em);
+    animation: span-S 1.5s linear 0s infinite alternate;
+}
+
+#version-final span{
+    font-size:initial;
+}
+
+@keyframes span-S{
+    0%{color:rgb(153, 55, 19)}
+    100%{color: rgba(115, 59, 26, 0.85)}
+}
+
+#version-final main article:last-child p{
+    margin: 0;
+}
+/* ################ Fin page Version final ################ */
